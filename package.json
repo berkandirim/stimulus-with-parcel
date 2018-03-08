@@ -1,0 +1,20 @@
+{
+  "name": "stimulus-with-parcel",
+  "version": "1.0.0",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "parcel index.html"  
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "kafein": "^0.4.0",
+    "stimulus": "^1.0.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}
