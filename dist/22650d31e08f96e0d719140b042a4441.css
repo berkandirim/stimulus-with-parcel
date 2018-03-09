@@ -425,6 +425,7 @@
  * Uses margin: 0 auto; when $type defined as "static"
  * By default it uses the 
  */
+@import url("679d4def045608ab7378ae71f3ac6073.css");
 body {
   color: #444;
   background-color: #eee;
@@ -433,3 +434,9 @@ body {
 
 .wrapper {
   padding: 30px; }
+
+.header {
+  margin-bottom: 2em; }
+
+.title {
+  margin-bottom: 0; }

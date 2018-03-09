@@ -1,6 +1,6 @@
 {
   "plugins": ["transform-class-properties"],
   "presets": [
-    ["env", { "modules": false }]
+    "es2015", "stage-0"
   ]
 }

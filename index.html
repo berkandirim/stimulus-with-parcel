@@ -2,22 +2,18 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://unpkg.com/chota@latest">
   <script src="./src/index.js" async></script>
 </head>
 <body>
     <div class="wrapper">
-        <header>
-            <h1>TITLE</h1>
-            <span>subtitle</span>
+        <header class="header">
+            <h1 class="title">STIMULUS WITH PARCEL SWAPI EXAMPLE</h1>
+            <span>using fetch API</span>
         </header>
-        <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, rerum excepturi quaerat numquam in blanditiis minima nobis eum enim. Necessitatibus saepe quibusdam harum quam ipsa, reprehenderit aspernatur impedit pariatur, eaque libero atque ab sit possimus consectetur molestias. At, sequi, consequuntur. Culpa omnis atque doloremque quasi eos, voluptates autem iusto iure reprehenderit! Rem esse delectus voluptatum architecto officiis laborum ipsum consequuntur libero ex iure iusto, culpa modi facilis magni vitae quaerat, nam a fuga officia mollitia et nesciunt aliquam. Deleniti sed dolorem explicabo, tempora quos possimus aperiam sint cupiditate, eveniet ut, eos in esse unde ipsam tempore est accusantium dolorum dignissimos.</p>
-        </section>
-        <div data-controller="refreshable">
-            <button data-action="refreshable#refresh" class="btn">Refresh</button>
-            <h1 data-target="refreshable.headline"></h1>
-            <article data-target="refreshable.content"></article>
+        <div data-controller="planet">
+            <button data-action="planet#getPlanet" class="btn">Get Planet</button>
+            <h2 data-target="planet.title"></h2>
+            <span data-target="planet.content"></article>
         </div>
     </div>
     
