@@ -9,7 +9,6 @@ export default class extends Controller {
         let list = document.createElement('ul')
         fetchData('planets/3/').then(data => {
             remoteData = data
-            console.log(remoteData.length)
 
             for (let i in remoteData) {
                 const item = document.createElement('li')
@@ -19,5 +18,9 @@ export default class extends Controller {
 
             this.contentTarget.innerHTML = list.innerHTML
         })
+    }
+
+    initialize () {
+        console.log('initialized')
     }
 }
