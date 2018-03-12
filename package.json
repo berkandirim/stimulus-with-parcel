@@ -17,6 +17,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "chota": "^0.4.2",
     "kafein": "^0.4.0",
+    "pace-progress": "^1.0.2",
     "stimulus": "^1.0.1"
   },
   "devDependencies": {

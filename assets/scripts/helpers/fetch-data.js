@@ -1,7 +1,6 @@
-const apiUrl = 'https://swapi.co/api/'
 
 export default async (url) => {
-    return fetch(`${apiUrl}${url}`, {
+    return fetch(url, {
         method: 'get'
     })
     .then(res => res.json())

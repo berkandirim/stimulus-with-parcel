@@ -1,6 +1,4 @@
 body {
-    color: #444;
-    background-color: #fdfdfd;
     font-family: -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
@@ -11,14 +9,23 @@ body {
     line-height: 1.4;
 }
 
-.wrapper {
+%flat-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.container {
     padding: 30px;
 }
 
-.header {
-    margin-bottom: 2em;
+.search-results {
+    ul {
+        @extend %flat-list;
+    }
 }
 
-.title {
-    margin-bottom: 0;
+.planet-content {
+    ul {
+        @extend %flat-list;
+    }
 }
