@@ -21,6 +21,13 @@ body {
 .search-results {
     ul {
         @extend %flat-list;
+        li {
+            &:before {
+                content: '• '
+            }
+            display: inline-block;
+            margin-right: 20px;
+        }
     }
 }
 
@@ -29,3 +36,10 @@ body {
         @extend %flat-list;
     }
 }
+
+.planet-link {
+    &.active {
+        font-weight: bold;
+    }
+}
+

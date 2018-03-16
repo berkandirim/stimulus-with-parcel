@@ -437,6 +437,15 @@ body {
 .container {
   padding: 30px; }
 
+.search-results ul li {
+  display: inline-block;
+  margin-right: 20px; }
+  .search-results ul li:before {
+    content: '• '; }
+
+.planet-link.active {
+  font-weight: bold; }
+
 .header {
   margin-bottom: 2em;
   padding: 2em;

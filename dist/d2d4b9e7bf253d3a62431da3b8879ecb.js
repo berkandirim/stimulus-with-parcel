@@ -9545,7 +9545,7 @@ exports.default = function (target, data) {
 
     for (var i in data) {
         var li = document.createElement('li');
-        li.innerHTML = data.length ? '<a data-action="planet#getPlanet" data-href="' + data[i].url + '" href="#">' + data[i].name + '</a>' : '<strong>' + i + ':</strong> ' + data[i];
+        li.innerHTML = data.length ? '<a class="planet-link" data-action="planet#getPlanet" data-href="' + data[i].url + '" href="#">' + data[i].name + '</a>' : '<strong>' + i + ':</strong> ' + data[i];
         ul.appendChild(li);
     }
 
@@ -9613,25 +9613,50 @@ var _class = function (_Controller) {
             var _this2 = this;
 
             e.preventDefault();
-            console.log('content loading...');
+            (0, _renderText2.default)(this.contentTarget, 'Getting planet info...');
             var url = e.target.getAttribute('data-href');
             (0, _fetchData2.default)(url).then(function (data) {
                 _this2.contentTarget.classList.add('card');
                 (0, _renderList2.default)(_this2.contentTarget, data);
-                console.log('content loaded');
             });
+            var links = document.getElementsByClassName('planet-link');
+            var _iteratorNormalCompletion = true;
+            var _didIteratorError = false;
+            var _iteratorError = undefined;
+
+            try {
+                for (var _iterator = links[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                    var link = _step.value;
+
+                    link.classList.remove('active');
+                }
+            } catch (err) {
+                _didIteratorError = true;
+                _iteratorError = err;
+            } finally {
+                try {
+                    if (!_iteratorNormalCompletion && _iterator.return) {
+                        _iterator.return();
+                    }
+                } finally {
+                    if (_didIteratorError) {
+                        throw _iteratorError;
+                    }
+                }
+            }
+
+            e.target.classList.add('active');
         }
     }, {
         key: 'searchInPlanets',
         value: function searchInPlanets() {
             var _this3 = this;
 
+            (0, _renderText2.default)(this.searchResultsTarget, 'Searching...');
             var term = this.termTarget.value;
             (0, _fetchData2.default)('https://swapi.co/api/planets/?search=' + term).then(function (data) {
-                console.log(data);
                 if (data.results.length < 1) {
-                    console.log('rendering text but no see nothing');
-                    (0, _renderText2.default)(_this3.searchResultsTarget, 'There is no such planet!');
+                    (0, _renderText2.default)(_this3.searchResultsTarget, '☹ There is no such planet!');
                 } else {
                     (0, _renderList2.default)(_this3.searchResultsTarget, data.results);
                 }
@@ -9674,7 +9699,7 @@ var application = _stimulus.Application.start();
 // register controllers
 application.register("hello", _hello_controller2.default);
 application.register("planet", _planet_controller2.default);
-},{"babel-core/register":13,"babel-polyfill":11,"stimulus":12,"./../styles/index.scss":3,"./controllers/hello_controller":4,"./controllers/planet_controller":5}],370:[function(require,module,exports) {
+},{"babel-core/register":13,"babel-polyfill":11,"stimulus":12,"./../styles/index.scss":3,"./controllers/hello_controller":4,"./controllers/planet_controller":5}],373:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -9797,5 +9822,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[370,2])
+},{}]},{},[373,2])
 //# sourceMappingURL=/dist/d2d4b9e7bf253d3a62431da3b8879ecb.map

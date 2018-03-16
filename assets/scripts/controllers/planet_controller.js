@@ -10,22 +10,25 @@ export default class extends Controller {
 
     getPlanet (e) {
         e.preventDefault()
-        console.log('content loading...')
+        renderText(this.contentTarget, 'Getting planet info...')
         const url = e.target.getAttribute('data-href')
         fetchData(url).then(data => {
             this.contentTarget.classList.add('card')
             renderList(this.contentTarget, data)
-            console.log('content loaded')
         })
+        let links = document.getElementsByClassName('planet-link')
+        for (let link of links) {
+            link.classList.remove('active')
+        }
+        e.target.classList.add('active')
     }
 
     searchInPlanets () {
+        renderText(this.searchResultsTarget, 'Searching...')
         const term = this.termTarget.value
         fetchData(`https://swapi.co/api/planets/?search=${term}`).then(data => {
-            console.log(data)
             if (data.results.length < 1) {
-                console.log('rendering text but no see nothing')
-                renderText(this.searchResultsTarget, 'There is no such planet!')
+                renderText(this.searchResultsTarget, '☹ There is no such planet!')
             } else {
                 renderList(this.searchResultsTarget, data.results)
             }
