@@ -3,8 +3,6 @@ import fetchData from '../helpers/fetch-data'
 import renderList from '../helpers/render-list'
 import renderText from '../helpers/render-text'
 
-let remoteData = {}
-
 export default class extends Controller {
     static targets = [ 'content', 'searchResults', 'term' ]
 
