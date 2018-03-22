@@ -1,4 +1,6 @@
 language: node_js
 node_js:
   - "8"
+install: 
+  - yarn global add parcel-bundler 
 script: yarn start
