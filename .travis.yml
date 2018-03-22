@@ -1,3 +1,4 @@
 language: node_jsm
-node_js: 
-  - "lts/* "
+node_js:
+  - "iojs"
+  - "7
