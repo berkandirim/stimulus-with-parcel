@@ -1,1 +1,3 @@
-language: node_js
+language: node_jsm
+node_js: 
+  - "lts/* "
