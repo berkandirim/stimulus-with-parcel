@@ -7,7 +7,7 @@
   "scripts": {
     "start": "parcel index.html -p 3000",
     "build": "parcel build index.html --public-url ./ --no-cache",
-    "deploy": "push-dir --dir=dist --branch=dist --cleanup"
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
