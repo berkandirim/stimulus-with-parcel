@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "start": "parcel index.html -p 3000",
-    "build": "parcel build index.html --public-url ./ --no-cache"
+    "build": "parcel build index.html --public-url ./ --no-cache",
+    "deploy": "push-dir --dir=dist --branch=dist --cleanup"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -22,6 +23,7 @@
     "stimulus": "^1.0.1"
   },
   "devDependencies": {
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.7.2",
+    "push-dir": "^0.4.1"
   }
 }
