@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "parcel index.html -p 3000",
-    "build": "parcel build index.html --public-url ./ --no-cache",
+    "build": "parcel build index.html --public-url https://berkandirim.github.io/stimulus-with-parcel/ --no-cache",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
