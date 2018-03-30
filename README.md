@@ -1,10 +1,17 @@
 # Stimulus with Parcel
 Stimulus example using Parcel bundler.
 
+- Install Parcel
+```
+$ yarn global add parcel-bundler
+```
+
+- Install dependencies
 ```
 $ yarn install
 ```
 
+- Start app
 ```
 $ yarn start
 ```
