@@ -4,9 +4,9 @@ import renderList from '../helpers/render-list'
 import renderText from '../helpers/render-text'
 
 export default class extends Controller {
-    static targets = [ 'content', 'searchResults', 'term' ]
+    static targets = ['content', 'searchResults', 'term']
 
-    getPlanet (e) {
+    getPlanet(e) {
         e.preventDefault()
         renderText(this.contentTarget, 'Getting planet info...')
         const url = e.target.getAttribute('data-href')
@@ -21,7 +21,7 @@ export default class extends Controller {
         e.target.classList.add('active')
     }
 
-    searchInPlanets () {
+    searchInPlanets() {
         renderText(this.searchResultsTarget, 'Searching...')
         const term = this.termTarget.value
         fetchData(`https://swapi.co/api/planets/?search=${term}`).then(data => {
@@ -30,11 +30,10 @@ export default class extends Controller {
             } else {
                 renderList(this.searchResultsTarget, data.results)
             }
-            
         })
     }
 
-    initialize () {
-        
-    }
+    // @TODO: create a method for getting resident names (api brings urls)
+
+    initialize() {}
 }
