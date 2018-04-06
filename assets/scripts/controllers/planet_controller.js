@@ -2,6 +2,7 @@ import { Controller } from 'stimulus'
 import fetchData from '../helpers/fetch-data'
 import renderList from '../helpers/render-list'
 import renderText from '../helpers/render-text'
+import store from 'store'
 
 export default class extends Controller {
     static targets = ['content', 'searchResults', 'term']
@@ -10,10 +11,20 @@ export default class extends Controller {
         e.preventDefault()
         renderText(this.contentTarget, 'Getting planet info...')
         const url = e.target.getAttribute('data-href')
-        fetchData(url).then(data => {
-            this.contentTarget.classList.add('card')
-            renderList(this.contentTarget, data)
-        })
+        fetchData(url)
+            .then(data => {
+                this.contentTarget.classList.add('card')
+                renderList(this.contentTarget, data)
+            })
+            .then(() => {
+                const residentUrls = store.get('residentUrls')
+                for (residentUrl in residentUrls) {
+                    fetchData(residentUrl).then(res => {
+                        // TODO herbirini yazdir
+                    })
+                }
+            })
+
         let links = document.getElementsByClassName('planet-link')
         for (let link of links) {
             link.classList.remove('active')
