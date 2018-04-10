@@ -23,10 +23,11 @@ export default class extends Controller {
         fetchData(url)
             .then(data => {
                 residentUrls = data['residents']
-                filmUrls = data['films']
+                filmUrls = data['films'] || []
                 planetInfo = data
                 planetInfo.residents = []
                 planetInfo.films = []
+                console.log(data)
             })
             .then(() => {
                 looper(residentUrls, planetInfo.residents, 'name', () => {

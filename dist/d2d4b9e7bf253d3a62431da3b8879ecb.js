@@ -9582,14 +9582,21 @@ var _fetchData2 = _interopRequireDefault(_fetchData);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function (array, model, prop, callback) {
-    var counter = 0;
-    for (var i = 0; i < array.length; i++) {
-        counter++;
-        (0, _fetchData2.default)(array[i]).then(function (res) {
-            counter--;
-            model.push(' ' + res[prop]);
-            if (counter === 0) callback();
-        });
+    if (array.length > 0) {
+        (function () {
+            var counter = 0;
+            for (var i = 0; i < array.length; i++) {
+                counter++;
+                (0, _fetchData2.default)(array[i]).then(function (res) {
+                    counter--;
+                    model.push(' ' + res[prop]);
+                    if (counter === 0) callback();
+                });
+            }
+        })();
+    } else {
+        model.push('None');
+        callback();
     }
 };
 },{"./fetch-data":6}],5:[function(require,module,exports) {
@@ -9657,10 +9664,11 @@ var _class = function (_Controller) {
             var url = e.target.getAttribute('data-href');
             (0, _fetchData2.default)(url).then(function (data) {
                 residentUrls = data['residents'];
-                filmUrls = data['films'];
+                filmUrls = data['films'] || [];
                 planetInfo = data;
                 planetInfo.residents = [];
                 planetInfo.films = [];
+                console.log(data);
             }).then(function () {
                 (0, _looper2.default)(residentUrls, planetInfo.residents, 'name', function () {
                     (0, _looper2.default)(filmUrls, planetInfo.films, 'title', function () {
@@ -9749,7 +9757,7 @@ var application = _stimulus.Application.start();
 // register controllers
 application.register("hello", _hello_controller2.default);
 application.register("planet", _planet_controller2.default);
-},{"babel-core/register":14,"babel-polyfill":12,"stimulus":13,"./../styles/index.scss":3,"./controllers/hello_controller":4,"./controllers/planet_controller":5}],390:[function(require,module,exports) {
+},{"babel-core/register":14,"babel-polyfill":12,"stimulus":13,"./../styles/index.scss":3,"./controllers/hello_controller":4,"./controllers/planet_controller":5}],393:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -9872,5 +9880,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[390,2])
+},{}]},{},[393,2])
 //# sourceMappingURL=/dist/d2d4b9e7bf253d3a62431da3b8879ecb.map
