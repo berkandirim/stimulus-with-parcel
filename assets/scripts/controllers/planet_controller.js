@@ -2,10 +2,18 @@ import { Controller } from 'stimulus'
 import fetchData from '../helpers/fetch-data'
 import renderList from '../helpers/render-list'
 import renderText from '../helpers/render-text'
-import store from 'store'
+import looper from '../helpers/looper'
+
+let planetInfo = {}
+let residentUrls = []
+let filmUrls = []
 
 export default class extends Controller {
     static targets = ['content', 'searchResults', 'term']
+    loopsDone(planetInfo) {
+        this.contentTarget.classList.add('card')
+        renderList(this.contentTarget, planetInfo)
+    }
 
     getPlanet(e) {
         e.preventDefault()
@@ -13,16 +21,18 @@ export default class extends Controller {
         const url = e.target.getAttribute('data-href')
         fetchData(url)
             .then(data => {
-                this.contentTarget.classList.add('card')
-                renderList(this.contentTarget, data)
+                residentUrls = data['residents']
+                filmUrls = data['films']
+                planetInfo = data
+                planetInfo.residents = []
+                planetInfo.films = []
             })
             .then(() => {
-                const residentUrls = store.get('residentUrls')
-                for (residentUrl in residentUrls) {
-                    fetchData(residentUrl).then(res => {
-                        // TODO herbirini yazdir
+                looper(residentUrls, planetInfo.residents, 'name', () => {
+                    looper(filmUrls, planetInfo.films, 'title', () => {
+                        this.loopsDone(planetInfo)
                     })
-                }
+                })
             })
 
         let links = document.getElementsByClassName('planet-link')
