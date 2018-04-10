@@ -17,6 +17,7 @@ export default class extends Controller {
 
     getPlanet(e) {
         e.preventDefault()
+        this.contentTarget.classList.remove('card')
         renderText(this.contentTarget, 'Getting planet info...')
         const url = e.target.getAttribute('data-href')
         fetchData(url)
@@ -53,8 +54,6 @@ export default class extends Controller {
             }
         })
     }
-
-    // @TODO: create a method for getting resident names (api brings urls)
 
     initialize() {}
 }

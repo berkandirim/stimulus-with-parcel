@@ -9652,6 +9652,7 @@ var _class = function (_Controller) {
             var _this2 = this;
 
             e.preventDefault();
+            this.contentTarget.classList.remove('card');
             (0, _renderText2.default)(this.contentTarget, 'Getting planet info...');
             var url = e.target.getAttribute('data-href');
             (0, _fetchData2.default)(url).then(function (data) {
@@ -9711,9 +9712,6 @@ var _class = function (_Controller) {
                 }
             });
         }
-
-        // @TODO: create a method for getting resident names (api brings urls)
-
     }, {
         key: 'initialize',
         value: function initialize() {}
@@ -9751,7 +9749,7 @@ var application = _stimulus.Application.start();
 // register controllers
 application.register("hello", _hello_controller2.default);
 application.register("planet", _planet_controller2.default);
-},{"babel-core/register":14,"babel-polyfill":12,"stimulus":13,"./../styles/index.scss":3,"./controllers/hello_controller":4,"./controllers/planet_controller":5}],388:[function(require,module,exports) {
+},{"babel-core/register":14,"babel-polyfill":12,"stimulus":13,"./../styles/index.scss":3,"./controllers/hello_controller":4,"./controllers/planet_controller":5}],390:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -9874,5 +9872,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[388,2])
+},{}]},{},[390,2])
 //# sourceMappingURL=/dist/d2d4b9e7bf253d3a62431da3b8879ecb.map
