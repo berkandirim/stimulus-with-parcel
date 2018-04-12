@@ -16,28 +16,25 @@ export default class extends Controller {
     }
 
     getPlanet(e) {
+        let links = document.getElementsByClassName('planet-link')
         e.preventDefault()
+
         this.contentTarget.classList.remove('card')
         renderText(this.contentTarget, 'Getting planet info...')
         const url = e.target.getAttribute('data-href')
-        fetchData(url)
-            .then(data => {
-                residentUrls = data['residents']
-                filmUrls = data['films'] || []
-                planetInfo = data
-                planetInfo.residents = []
-                planetInfo.films = []
-                console.log(data)
-            })
-            .then(() => {
-                looper(residentUrls, planetInfo.residents, 'name', () => {
-                    looper(filmUrls, planetInfo.films, 'title', () => {
-                        this.loopsDone(planetInfo)
-                    })
+        fetchData(url).then(data => {
+            residentUrls = data['residents'] || []
+            filmUrls = data['films'] || []
+            planetInfo = data
+            planetInfo.residents = []
+            planetInfo.films = []
+            looper(residentUrls, planetInfo.residents, 'name', () => {
+                looper(filmUrls, planetInfo.films, 'title', () => {
+                    this.loopsDone(planetInfo)
                 })
             })
+        })
 
-        let links = document.getElementsByClassName('planet-link')
         for (let link of links) {
             link.classList.remove('active')
         }
