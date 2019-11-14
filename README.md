@@ -1,3 +1,5 @@
+![build](https://travis-ci.org/berkandirim/stimulus-with-parcel.svg?branch=master)
+
 # Stimulus with Parcel
 Stimulus example using Parcel bundler.
 
