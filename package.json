@@ -19,11 +19,10 @@
     "babel-preset-stage-0": "^6.24.1",
     "chota": "^0.4.2",
     "kafein": "^0.4.0",
-    "pace-progress": "^1.0.2",
-    "stimulus": "^1.0.1",
-    "store": "^2.0.12"
+    "stimulus": "^1.1.1"
   },
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "node-sass": "^4.7.2",
     "push-dir": "^0.4.1"
   }

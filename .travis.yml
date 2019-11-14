@@ -2,6 +2,6 @@ language: node_js
 node_js:
   - "8"
 install: 
-  - yarn install
-  - yarn global add parcel-bundler 
-script: yarn build
+  - npm i
+  - npm i -g parcel-bundler 
+script: npm run build

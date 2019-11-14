@@ -2,6 +2,7 @@ import 'babel-core/register'
 import 'babel-polyfill'
 
 import { Application } from "stimulus"
+import 'chota/dist/chota.css';
 import './../styles/index.scss'
 
 // import controllers
