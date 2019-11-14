@@ -1,4 +1,4 @@
-![build](https://travis-ci.org/berkandirim/stimulus-with-parcel.svg?branch=master)
+[![Build Status](https://travis-ci.org/berkandirim/stimulus-with-parcel.svg?branch=master)](https://travis-ci.org/berkandirim/stimulus-with-parcel)
 
 # Stimulus with Parcel
 Stimulus example using Parcel bundler.
