@@ -5,17 +5,17 @@ Stimulus example using Parcel bundler.
 
 - Install Parcel
 ```
-$ yarn global add parcel-bundler
+$ npm i -g parcel-bundler
 ```
 
 - Install dependencies
 ```
-$ yarn install
+$ npm i
 ```
 
 - Start app
 ```
-$ yarn start
+$ npm start
 ```
 
 Search for a planet in Star Wars universe. Then click on the name to get the planet info.
