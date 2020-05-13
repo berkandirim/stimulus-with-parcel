@@ -44,7 +44,7 @@ export default class extends Controller {
     searchInPlanets() {
         renderText(this.searchResultsTarget, 'Searching...')
         const term = this.termTarget.value
-        fetchData(`https://swapi.co/api/planets/?search=${term}`).then(data => {
+        fetchData(`https://swapi.dev/api/planets/?search=${term}`).then(data => {
             if (data.results.length < 1) {
                 renderText(this.searchResultsTarget, '☹ There is no such planet!')
             } else {

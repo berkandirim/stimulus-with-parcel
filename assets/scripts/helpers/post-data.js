@@ -1,4 +1,4 @@
-const apiUrl = 'https://swapi.co/api/'
+const apiUrl = 'https://swapi.dev/api/'
 
 export default async (url, body) => {
     return fetch(`${apiUrl}${url}`, {
