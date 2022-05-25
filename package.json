@@ -5,8 +5,7 @@
   "private": true,
   "scripts": {
     "start": "npx parcel index.html -p 3000",
-    "build": "npx parcel build index.html --public-url https://berkandirim.github.io/stimulus-with-parcel/ --no-cache",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "build": "npx parcel build index.html --public-url https://berkandirim.github.io/stimulus-with-parcel/ --no-cache"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -20,7 +19,6 @@
     "@parcel/transformer-sass": "2.5.0",
     "cssnano": "^5.1.9",
     "node-sass": "^7.0.1",
-    "parcel": "^2.5.0",
-    "push-dir": "^0.4.1"
+    "parcel": "^2.5.0"
   }
 }
