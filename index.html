@@ -1,34 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Stimulus with Parcel Example</title>
-    <meta charset="utf-8">
-</head>
-<body>
+    <meta charset="utf-8" />
+  </head>
+  <body>
     <div class="container">
-        <header class="header">
-            <h1 class="title">
-                <span>Stimulus With Parcel</span>
-            </h1>
-            <span>using fetch API and SWAPI</span>
-        </header>
-        <section class="main">
-            <div data-controller="planet">
-                <h2>Search in Planets</h2>
-                <div class="row">
-                    <div class="col-6">
-                        <input type="text" name="search" placeholder="Endor, Tatooine, etc." data-action="planet#searchInPlanets" data-target="planet.term">
-                    </div>
-                    <div class="col-6">
-                        <button data-action="planet#searchInPlanets">Search</button>
-                    </div>
-                </div>
-                <div class="search-results" data-target="planet.searchResults"></div>
-                <div class="planet-content" data-target="planet.content"></div>
+      <header class="header">
+        <h1 class="title">
+          <span>Stimulus With Parcel</span>
+        </h1>
+        <span>using fetch API and SWAPI</span>
+      </header>
+      <section class="main">
+        <div data-controller="planet">
+          <h2>Search in Planets</h2>
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="text"
+                name="search"
+                placeholder="Endor, Tatooine, etc."
+                data-action="planet#searchInPlanets"
+                data-target="planet.term"
+              />
             </div>
-        </section>
-        <footer></footer>
+            <div class="col-6">
+              <button data-action="planet#searchInPlanets">Search</button>
+            </div>
+          </div>
+          <div class="search-results" data-target="planet.searchResults"></div>
+          <div class="planet-content" data-target="planet.content"></div>
+        </div>
+      </section>
+      <footer></footer>
     </div>
-    <script src="./assets/scripts/index.js" async></script>
-</body>
+    <script src="./assets/scripts/index.js" type="module" async></script>
+  </body>
 </html>
